@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const PricePlan = ({ className, title, price }) => {
   return (
@@ -31,7 +32,7 @@ const PricePlan = ({ className, title, price }) => {
         </div>
       </div>
       <div className="btn-wrapper">
-        <button>Get Started</button>
+        <Link to="/order">Get Started</Link>
       </div>
     </div>
   );
@@ -64,7 +65,7 @@ export default styled(PricePlan)`
 
   .btn-wrapper {
     border-top: 1px solid #e8ddef;
-    padding-top: 1.3em;
+    padding-top: 3em;
     margin-top: 3em;
   }
 
@@ -76,11 +77,13 @@ export default styled(PricePlan)`
     }
   }
 
-  button {
-    padding: 1.5em 3em;
+  a {
+    padding: 1em 3em;
     color: white;
     border-radius: 4px;
+    text-decoration: none;
     cursor: pointer;
+
     ${({ red, green, blue }) => {
       if (red) {
         return 'background-image: linear-gradient(to right, #fb8383 0, #f24548 100%);';
