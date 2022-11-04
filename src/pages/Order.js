@@ -12,7 +12,7 @@ const Order = ({ className }) => {
     }
 
     try {
-      await axios.post('http://localhost:3001', { email, userName });
+      await axios.post('https://foost123.herokuapp.com/', { email, userName });
       alert('Email send!!');
     } catch (e) {
       alert('Ouups. something went wrong');
